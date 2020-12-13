@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import Header from "../components/Header";
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>HomeScreen</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Header title={"CÜZDANIM"} />
+    </SafeAreaView>
   );
 };
 

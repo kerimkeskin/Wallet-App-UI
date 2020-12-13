@@ -13,8 +13,8 @@ import { Feather } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
-const Width = Dimensions.get('window').width;
-const Height = Dimensions.get('window').height;
+const Width = Dimensions.get("window").width;
+const Height = Dimensions.get("window").height;
 
 const Tab = createBottomTabNavigator();
 
@@ -25,8 +25,6 @@ const Navigator = () => {
         initialRouteName={"Home"}
         // screenOptions={}
         tabBarOptions={{
-          activeTintColor: "red",
-          // activeTintColor:'#171f25'
           activeBackgroundColor: "#212b31",
           inactiveBackgroundColor: "#212b31",
           showLabel: false,
@@ -36,7 +34,7 @@ const Navigator = () => {
             bottom: 0,
             left: 0,
           },
-          style: { height: Height*0.11 },
+          style: { height: Height * 0.11 },
         }}
       >
         <Tab.Screen
