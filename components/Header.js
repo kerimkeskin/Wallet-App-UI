@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -12,28 +18,34 @@ const Header = ({ title }) => {
     <View style={styles.container}>
       <View style={styles.headercontainer}>
         <View style={styles.headerleft}>
-          <Ionicons
-            style={{ marginHorizontal: 10 }}
-            name="chevron-back-outline"
-            size={34}
-            color="white"
-          />
+          <TouchableOpacity>
+            <Ionicons
+              style={{ marginHorizontal: 10 }}
+              name="chevron-back-outline"
+              size={34}
+              color="white"
+            />
+          </TouchableOpacity>
           <Text style={styles.text}>{title}</Text>
         </View>
         <View style={styles.headerright}>
-          <MaterialCommunityIcons
-            style={{ marginHorizontal: 10 }}
-            name="bell-alert"
-            size={29}
-            color="#caea75"
-          />
+          <TouchableOpacity>
+            <MaterialCommunityIcons
+              style={{ marginHorizontal: 10 }}
+              name="bell-alert"
+              size={29}
+              color="#caea75"
+            />
+          </TouchableOpacity>
           <View style={styles.pp}></View>
-          <FontAwesome5
-            style={{ marginHorizontal: 10 }}
-            name="caret-down"
-            size={16}
-            color="white"
-          />
+          <TouchableOpacity>
+            <FontAwesome5
+              style={{ marginHorizontal: 10 }}
+              name="caret-down"
+              size={16}
+              color="white"
+            />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -44,7 +56,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
   },
   text: {
     color: "white",
