@@ -1,31 +1,50 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Image,
+  ActivityIndicator,
+} from "react-native";
+import {
+  useFonts,
+  Montserrat_700Bold,
+  Montserrat_600SemiBold,
+  Montserrat_800ExtraBold,
+} from "@expo-google-fonts/montserrat";
 
 const Width = Dimensions.get("window").width;
 const Height = Dimensions.get("window").height;
 
 const BalanceCard = () => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <View style={{ padding: 30 }}>
-          <Text style={{ fontSize: 12, color: "white", marginVertical: 7 }}>
-            Bakiye:
-          </Text>
-          <Text style={{ fontSize: 22, fontWeight: "bold", color: "white" }}>
-            550,27 TL{" "}
-          </Text>
-        </View>
+  let [fontsLoaded] = useFonts({
+    Montserrat_700Bold,
+    Montserrat_600SemiBold,
+    Montserrat_800ExtraBold,
+  });
 
-        <View style={styles.qrcodecontainer}>
-          <Image
-            style={styles.qrcodeimage}
-            source={require("../assets/images/qrcode.png")}
-          />
+  if (!fontsLoaded) {
+    return <ActivityIndicator />;
+  } else {
+    return (
+      <View style={styles.container}>
+        <View style={styles.cardContainer}>
+          <View style={{ padding: 30 }}>
+            <Text style={styles.balancetext}>Bakiye:</Text>
+            <Text style={styles.pricetext}>550,27 TL </Text>
+          </View>
+
+          <View style={styles.qrcodecontainer}>
+            <Image
+              style={styles.qrcodeimage}
+              source={require("../assets/images/qrcode.png")}
+            />
+          </View>
         </View>
       </View>
-    </View>
-  );
+    );
+  }
 };
 
 const styles = StyleSheet.create({
@@ -57,6 +76,18 @@ const styles = StyleSheet.create({
   qrcodeimage: {
     width: 35,
     height: 35,
+  },
+  balancetext: {
+    fontSize: 12,
+    color: "white",
+    marginVertical: 7,
+    fontFamily: "Montserrat_700Bold",
+  },
+  pricetext: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "white",
+    fontFamily: "Montserrat_800ExtraBold",
   },
 });
 
