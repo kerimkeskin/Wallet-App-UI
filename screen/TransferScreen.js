@@ -1,14 +1,21 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 const TransferScreen = () => {
-    return (
-        <View>
-            <Text>TransferScreen</Text>
-        </View>
-    )
-}
+  return (
+    <View style={styles.container}>
+      <Text>TransferScreen</Text>
+    </View>
+  );
+};
 
-export default TransferScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+});
+
+export default TransferScreen;

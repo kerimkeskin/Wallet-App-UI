@@ -57,14 +57,63 @@ const StatusCard = () => {
             </View>
           </View>
           <View style={styles.percentagebarcontainer}>
+            <Text
+              style={{
+                position: "absolute",
+                left: 25,
+                top: 20,
+                fontSize: 25,
+                fontFamily: "Montserrat_800ExtraBold",
+                color:'white'
+              }}
+            >
+              40%
+            </Text>
+            <Text
+              style={{
+                position: "absolute",
+                left: 25,
+                top: 53,
+                fontSize: 12,
+                fontFamily: "Montserrat_700Bold",
+                color:'white'
+              }}
+            >
+              Gönderildi
+            </Text>
+            <Text
+              style={{
+                position: "absolute",
+                right: 36,
+                bottom: 20,
+                fontSize: 25,
+                fontFamily: "Montserrat_800ExtraBold",
+                color:'white'
+              }}
+            >
+              60%
+            </Text>
+            <Text
+              style={{
+                position: "absolute",
+                right: 52,
+                bottom: 3,
+                fontSize: 12,
+                fontFamily: "Montserrat_700Bold",
+                color:'white'
+              }}
+            >
+              Alındı
+            </Text>
             <AnimatedCircularProgress
               style={styles.percentagebar}
               size={150}
               width={15}
               fill={60}
               backgroundWidth={10}
-              rotation={0 - 10}
+              rotation={0 - 5}
               tintColor="#caea75"
+              lineCap={"round"}
               backgroundColor="#636b6f"
             />
           </View>
@@ -82,7 +131,7 @@ const styles = StyleSheet.create({
     width: Width * 0.9,
     height: Height * 0.35,
     backgroundColor: "#212b31",
-    borderRadius: 20,
+    borderRadius: 15,
     flexDirection: "column",
   },
   timezonecontainer: {
@@ -114,7 +163,6 @@ const styles = StyleSheet.create({
   },
   percentagebarcontainer: {
     width: "100%",
-    // height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
