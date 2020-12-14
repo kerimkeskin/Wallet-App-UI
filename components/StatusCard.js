@@ -14,6 +14,7 @@ import {
   Montserrat_800ExtraBold,
 } from "@expo-google-fonts/montserrat";
 import { Entypo } from "@expo/vector-icons";
+import { AnimatedCircularProgress } from "react-native-circular-progress";
 
 const Width = Dimensions.get("window").width;
 const Height = Dimensions.get("window").height;
@@ -34,7 +35,6 @@ const StatusCard = () => {
           <View
             style={{
               padding: 30,
-              flex: 1,
               height: 90,
               justifyContent: "center",
             }}
@@ -56,6 +56,18 @@ const StatusCard = () => {
               </TouchableOpacity>
             </View>
           </View>
+          <View style={styles.percentagebarcontainer}>
+            <AnimatedCircularProgress
+              style={styles.percentagebar}
+              size={150}
+              width={15}
+              fill={60}
+              backgroundWidth={10}
+              rotation={0 - 10}
+              tintColor="#caea75"
+              backgroundColor="#636b6f"
+            />
+          </View>
         </View>
       </View>
     );
@@ -71,7 +83,7 @@ const styles = StyleSheet.create({
     height: Height * 0.35,
     backgroundColor: "#212b31",
     borderRadius: 20,
-    flexDirection: "row",
+    flexDirection: "column",
   },
   timezonecontainer: {
     flex: 1,
@@ -99,6 +111,15 @@ const styles = StyleSheet.create({
     color: "#636b6f",
     letterSpacing: 1,
     fontFamily: "Montserrat_800ExtraBold",
+  },
+  percentagebarcontainer: {
+    width: "100%",
+    // height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  percentagebar: {
+    borderRadius: 50,
   },
 });
 
