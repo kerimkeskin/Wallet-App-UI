@@ -2,6 +2,7 @@ import React from "react";
 import {
   StyleSheet,
   Text,
+  Image,
   View,
   Dimensions,
   TouchableOpacity,
@@ -47,13 +48,17 @@ const Header = ({ title }) => {
           <View style={styles.headerright}>
             <TouchableOpacity>
               <MaterialCommunityIcons
-                style={{ marginHorizontal: 10 }}
+                style={{ marginHorizontal: 15 }}
                 name="bell-alert"
                 size={29}
                 color="#caea75"
               />
             </TouchableOpacity>
-            <View style={styles.pp}></View>
+            <Image
+              source={require("../assets/images/pp.jpg")}
+              style={styles.pp}
+            />
+
             <TouchableOpacity>
               <FontAwesome5
                 style={{ marginHorizontal: 10 }}
@@ -80,7 +85,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     letterSpacing: 1,
-    fontFamily:'Montserrat_800ExtraBold'
+    fontFamily: "Montserrat_800ExtraBold",
   },
   headercontainer: {
     width: Width,

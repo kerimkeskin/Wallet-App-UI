@@ -47,7 +47,7 @@ const Navigator = () => {
             tabBarIcon: ({ focused }) => (
               <AntDesign
                 name="creditcard"
-                size={24}
+                size={30}
                 color={focused ? "#caea75" : "white"}
               />
             ),
@@ -60,7 +60,7 @@ const Navigator = () => {
             tabBarIcon: ({ focused }) => (
               <Feather
                 name="send"
-                size={24}
+                size={30}
                 color={focused ? "#caea75" : "white"}
               />
             ),
@@ -73,7 +73,7 @@ const Navigator = () => {
             tabBarIcon: ({ focused }) => (
               <AntDesign
                 name="qrcode"
-                size={24}
+                size={30}
                 color={focused ? "#caea75" : "white"}
               />
             ),
@@ -86,7 +86,7 @@ const Navigator = () => {
             tabBarIcon: ({ focused }) => (
               <MaterialCommunityIcons
                 name="swap-horizontal-bold"
-                size={24}
+                size={30}
                 color={focused ? "#caea75" : "white"}
               />
             ),
@@ -99,7 +99,7 @@ const Navigator = () => {
             tabBarIcon: ({ focused }) => (
               <SimpleLineIcons
                 name="settings"
-                size={24}
+                size={30}
                 color={focused ? "#caea75" : "white"}
               />
             ),
@@ -112,6 +112,6 @@ const Navigator = () => {
   );
 };
 
-// const styles = StyleSheet.create({});
+
 
 export default Navigator;

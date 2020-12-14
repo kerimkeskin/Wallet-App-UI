@@ -31,7 +31,7 @@ const BalanceCard = () => {
       <View style={styles.container}>
         <View style={styles.cardContainer}>
           <View style={{ padding: 30 }}>
-            <Text style={styles.balancetext}>Bakiye:</Text>
+            <Text style={styles.balancetext}>Bakiye</Text>
             <Text style={styles.pricetext}>550,27 TL </Text>
           </View>
 
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     height: 35,
   },
   balancetext: {
-    fontSize: 12,
+    fontSize: 15,
     color: "white",
     marginVertical: 7,
     fontFamily: "Montserrat_700Bold",
