@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import Header from "../components/Header";
 import BalanceCard from "../components/BalanceCard";
 import StatusCard from "../components/StatusCard";
+import Transaction from "../components/Transaction";
 
 
 const HomeScreen = () => {
@@ -11,6 +12,7 @@ const HomeScreen = () => {
       <Header title={"CÜZDANIM"} />
       <BalanceCard />
       <StatusCard />
+      <Transaction/>
     </SafeAreaView>
   );
 };
