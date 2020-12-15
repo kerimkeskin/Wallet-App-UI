@@ -57,54 +57,10 @@ const StatusCard = () => {
             </View>
           </View>
           <View style={styles.percentagebarcontainer}>
-            <Text
-              style={{
-                position: "absolute",
-                left: 25,
-                top: 20,
-                fontSize: 25,
-                fontFamily: "Montserrat_800ExtraBold",
-                color:'white'
-              }}
-            >
-              40%
-            </Text>
-            <Text
-              style={{
-                position: "absolute",
-                left: 25,
-                top: 53,
-                fontSize: 12,
-                fontFamily: "Montserrat_700Bold",
-                color:'white'
-              }}
-            >
-              Gönderildi
-            </Text>
-            <Text
-              style={{
-                position: "absolute",
-                right: 36,
-                bottom: 20,
-                fontSize: 25,
-                fontFamily: "Montserrat_800ExtraBold",
-                color:'white'
-              }}
-            >
-              60%
-            </Text>
-            <Text
-              style={{
-                position: "absolute",
-                right: 52,
-                bottom: 3,
-                fontSize: 12,
-                fontFamily: "Montserrat_700Bold",
-                color:'white'
-              }}
-            >
-              Alındı
-            </Text>
+            <Text style={styles.sendpercent}>40%</Text>
+            <Text style={styles.sendpercenttext}>Gönderildi</Text>
+            <Text style={styles.received}>60%</Text>
+            <Text style={styles.receivedpercentext}>Alındı</Text>
             <AnimatedCircularProgress
               style={styles.percentagebar}
               size={150}
@@ -168,6 +124,38 @@ const styles = StyleSheet.create({
   },
   percentagebar: {
     borderRadius: 50,
+  },
+  sendpercent: {
+    position: "absolute",
+    left: 25,
+    top: 20,
+    fontSize: 25,
+    fontFamily: "Montserrat_800ExtraBold",
+    color: "white",
+  },
+  sendpercenttext: {
+    position: "absolute",
+    left: 25,
+    top: 53,
+    fontSize: 12,
+    fontFamily: "Montserrat_700Bold",
+    color: "white",
+  },
+  received: {
+    position: "absolute",
+    right: 36,
+    bottom: 20,
+    fontSize: 25,
+    fontFamily: "Montserrat_800ExtraBold",
+    color: "white",
+  },
+  receivedpercentext: {
+    position: "absolute",
+    right: 52,
+    bottom: 3,
+    fontSize: 12,
+    fontFamily: "Montserrat_700Bold",
+    color: "white",
   },
 });
 
