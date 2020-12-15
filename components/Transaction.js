@@ -5,6 +5,7 @@ import {
   View,
   Dimensions,
   ScrollView,
+  TouchableOpacity,
   ActivityIndicator,
 } from "react-native";
 import {
@@ -13,7 +14,7 @@ import {
   Montserrat_600SemiBold,
   Montserrat_800ExtraBold,
 } from "@expo-google-fonts/montserrat";
-
+import TransactionDetail from "../components/TransactionDetail";
 const Width = Dimensions.get("window").width;
 const Height = Dimensions.get("window").height;
 
@@ -29,33 +30,39 @@ const Transaction = () => {
   } else {
     return (
       <View style={{ alignItems: "center" }}>
-        <View
-          style={{
-            flexDirection: "row",
-            margin: 20,
-            justifyContent: "space-between",
-            color: "white",
-            width: Width * 0.9,
-          }}
-        >
-          <Text style={styles.transactiontext}>GEÇMİŞ İŞLEMLER</Text>
-          <Text
-            style={[styles.transactiontext, { fontSize: 14, color: "#caea75" }]}
-          >
-            Hepsini gör
-          </Text>
+        <View style={styles.transactionheader}>
+          <TouchableOpacity>
+            <Text style={styles.transactiontext}>GEÇMİŞ İŞLEMLER</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text
+              style={[
+                styles.transactiontext,
+                { fontSize: 14, color: "#caea75" },
+              ]}
+            >
+              Hepsini gör
+            </Text>
+          </TouchableOpacity>
         </View>
 
         <ScrollView style={styles.container}>
-          <View style={styles.cardContainer}>
-            <View
-              style={{
-                width: 55,
-                height: 55,
-                borderRadius: 70,
-                backgroundColor: "white",
-              }}
-            ></View>
+          <View style={styles.pastTransactionContainer}>
+            <TransactionDetail
+              info={"Market"}
+              date={"15/12/2020"}
+              price={"-30,00 TL"}
+            />
+            <TransactionDetail
+              info={"Para Çekme"}
+              date={"13/12/2020"}
+              price={"-50,00 TL"}
+            />
+            <TransactionDetail
+              info={"Para Yatırma"}
+              date={"12/12/2020"}
+              price={"+240,00 TL"}
+            />
           </View>
         </ScrollView>
       </View>
@@ -67,12 +74,15 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
   },
-  cardContainer: {
+  pastTransactionContainer: {
     width: Width * 0.9,
     height: Height * 0.35,
-    backgroundColor: "#212b31",
-    borderRadius: 15,
-    flexDirection: "column",
+  },
+  transactionheader: {
+    flexDirection: "row",
+    margin: 15,
+    justifyContent: "space-between",
+    width: Width * 0.9,
   },
   transactiontext: {
     fontSize: 17,
