@@ -78,7 +78,9 @@ const SendScreen = () => {
         <SendButton onPress={showModal} />
 
         <Provider>
-          <Portal theme={{ colors: { backdrop: "#FFFFFF90",background:'red' }, }}>
+          <Portal
+            theme={{ colors: { backdrop: "#FFFFFF90", background: "red" } }}
+          >
             <Modal
               visible={visible}
               onDismiss={hideModal}
@@ -87,15 +89,7 @@ const SendScreen = () => {
               <TouchableOpacity onPress={hideModal} style={styles.icon}>
                 <MaterialIcons name="cancel" size={32} color="#c1c4c6" />
               </TouchableOpacity>
-              <View
-                style={{
-                  width: "100%",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  margin: 5,
-                  paddingTop: 20,
-                }}
-              >
+              <View style={styles.modalbox}>
                 <MaterialCommunityIcons
                   style={{ marginTop: 25 }}
                   name="checkbox-marked-circle-outline"
@@ -134,6 +128,13 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 270,
     margin: 73,
+  },
+  modalbox: {
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 5,
+    paddingTop: 20,
   },
   container: {
     flex: 1,

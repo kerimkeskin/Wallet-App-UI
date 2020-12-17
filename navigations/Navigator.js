@@ -8,10 +8,12 @@ import {
   SettingsScreen,
   TransferScreen,
 } from "../screen";
-import { AntDesign } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { SimpleLineIcons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  SimpleLineIcons,
+  Feather,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 
 const Width = Dimensions.get("window").width;
 const Height = Dimensions.get("window").height;

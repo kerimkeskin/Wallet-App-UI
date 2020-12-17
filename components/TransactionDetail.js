@@ -28,28 +28,11 @@ const TransactionDetail = ({ info, date, price }) => {
   } else {
     return (
       <View style={styles.container}>
-        <View
-          style={{
-            width: 55,
-            height: 55,
-            borderRadius: 70,
-            backgroundColor: "white",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <View style={styles.image}>
           <Entypo name="arrow-long-right" size={24} color="green" />
         </View>
 
-        <View
-          style={{
-            justifyContent: "space-between",
-            flexDirection: "row",
-            flex: 1,
-            alignItems: "center",
-            margin: 10,
-          }}
-        >
+        <View style={styles.transactioncontainer}>
           <View>
             <Text style={styles.transactiontext}>{info}</Text>
             <Text
@@ -76,6 +59,21 @@ const styles = StyleSheet.create({
     height: 55,
     flexDirection: "row",
     margin: 5,
+  },
+  transactioncontainer: {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    flex: 1,
+    alignItems: "center",
+    margin: 10,
+  },
+  image: {
+    width: 55,
+    height: 55,
+    borderRadius: 70,
+    backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
   },
   transactiontext: {
     fontSize: 17,
