@@ -13,8 +13,6 @@ import { Feather } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
-
-
 const Width = Dimensions.get("window").width;
 const Height = Dimensions.get("window").height;
 
@@ -25,7 +23,6 @@ const Navigator = () => {
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName={"Home"}
-        // screenOptions={}
         tabBarOptions={{
           activeBackgroundColor: "#212b31",
           inactiveBackgroundColor: "#212b31",
@@ -37,12 +34,9 @@ const Navigator = () => {
             left: 0,
           },
           style: { height: Height * 0.11 },
-          
         }}
-
       >
         <Tab.Screen
-        
           options={{
             tabBarIcon: ({ focused }) => (
               <AntDesign
@@ -111,7 +105,5 @@ const Navigator = () => {
     </NavigationContainer>
   );
 };
-
-
 
 export default Navigator;

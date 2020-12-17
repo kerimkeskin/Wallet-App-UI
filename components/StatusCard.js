@@ -14,8 +14,8 @@ import {
   Montserrat_800ExtraBold,
 } from "@expo-google-fonts/montserrat";
 import { Entypo } from "@expo/vector-icons";
-import { AnimatedCircularProgress } from "react-native-circular-progress";
 
+import CircularProgress from "./CircularProgress";
 const Width = Dimensions.get("window").width;
 const Height = Dimensions.get("window").height;
 
@@ -32,25 +32,11 @@ const StatusCard = () => {
     return (
       <View style={styles.container}>
         <View style={styles.cardContainer}>
-          <View
-            style={{
-              padding: 30,
-              height: 90,
-              justifyContent: "center",
-            }}
-          >
+          <View style={styles.textcontainer}>
             <Text style={styles.statustext}>Durum</Text>
             <Text style={styles.datetext}>Bu hafta, 10-17 Aralık </Text>
             <View style={styles.timezonecontainer}>
-              <Text
-                style={{
-                  fontFamily: "Montserrat_600SemiBold",
-                  letterSpacing: 1,
-                  color: "#caea75",
-                }}
-              >
-                Haftalık
-              </Text>
+              <Text style={styles.weektext}>Haftalık</Text>
               <TouchableOpacity>
                 <Entypo name="chevron-down" size={24} color="#caea75" />
               </TouchableOpacity>
@@ -61,8 +47,7 @@ const StatusCard = () => {
             <Text style={styles.sendpercenttext}>Gönderildi</Text>
             <Text style={styles.received}>60%</Text>
             <Text style={styles.receivedpercentext}>Alındı</Text>
-            <AnimatedCircularProgress
-              style={styles.percentagebar}
+            <CircularProgress
               size={150}
               width={15}
               fill={60}
@@ -105,6 +90,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "center",
   },
+  textcontainer: {
+    padding: 30,
+    height: 90,
+    justifyContent: "center",
+  },
   statustext: {
     fontSize: 15,
     color: "white",
@@ -117,13 +107,15 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
     fontFamily: "Montserrat_800ExtraBold",
   },
+  weektext: {
+    fontFamily: "Montserrat_600SemiBold",
+    letterSpacing: 1,
+    color: "#caea75",
+  },
   percentagebarcontainer: {
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
-  },
-  percentagebar: {
-    borderRadius: 50,
   },
   sendpercent: {
     position: "absolute",
