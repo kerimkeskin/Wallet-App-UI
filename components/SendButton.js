@@ -13,12 +13,11 @@ import {
   Montserrat_600SemiBold,
   Montserrat_800ExtraBold,
 } from "@expo-google-fonts/montserrat";
-import { TextInput } from "react-native-gesture-handler";
 
 const Width = Dimensions.get("window").width;
 const Height = Dimensions.get("window").height;
 
-const SendButton = () => {
+const SendButton = ({ onPress}) => {
   let [fontsLoaded] = useFonts({
     Montserrat_700Bold,
     Montserrat_600SemiBold,
@@ -30,7 +29,7 @@ const SendButton = () => {
   } else {
     return (
       <View style={styles.container}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={onPress} style={styles.button}>
           <Text style={styles.buttontext}>GÖNDER</Text>
         </TouchableOpacity>
       </View>
@@ -40,7 +39,6 @@ const SendButton = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     margin: 20,
     height: (Height * 0.2) / 3,
     alignItems: "center",
