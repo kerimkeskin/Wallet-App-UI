@@ -15,7 +15,7 @@ import {
   Montserrat_800ExtraBold,
 } from "@expo-google-fonts/montserrat";
 import InputBox from "../components/InputBox";
-import { TextInput } from "react-native-gesture-handler";
+import SendButton from "../components/SendButton";
 
 const SendScreen = () => {
   let [fontsLoaded] = useFonts({
@@ -41,7 +41,7 @@ const SendScreen = () => {
             lineCap={"round"}
             backgroundColor="#636b6f"
           />
-          <Text style={styles.balancetext}>500 TL </Text>
+          <Text style={styles.balancetext}>550,27 TL </Text>
           <Text
             style={[
               styles.balancetext,
@@ -56,11 +56,12 @@ const SendScreen = () => {
           </Text>
         </View>
 
-        <View style={styles.inputcontainer}>
+        <View>
           <InputBox title={"Açıklama"} />
           <InputBox title={"Tutar"} />
           <InputBox title={"Alıcı Kart Numarası"} />
         </View>
+        <SendButton />
       </SafeAreaView>
     );
   }
@@ -80,7 +81,6 @@ const styles = StyleSheet.create({
     color: "white",
     fontFamily: "Montserrat_700Bold",
   },
-  credittext: {},
 });
 
 export default SendScreen;
